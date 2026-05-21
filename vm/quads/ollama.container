@@ -1,0 +1,20 @@
+[Unit]
+Description=Ollama LLM server
+After=network-online.target podman-prepull.service
+Wants=network-online.target podman-prepull.service
+Requires=podman-prepull.service
+
+[Container]
+ContainerName=ollama
+Image=docker.io/ollama/ollama:0.24.0
+Volume=/var/lib/ollama:/root/.ollama:Z
+PublishPort=9011:11434
+Environment=OLLAMA_HOST=0.0.0.0:11434
+
+[Service]
+RestartSec=5
+# Always restart on failure
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

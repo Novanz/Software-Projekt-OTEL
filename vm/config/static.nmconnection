@@ -1,0 +1,13 @@
+[connection]
+          id=static
+          type=ethernet
+          interface-name=enp1s0
+
+          [ipv4]
+          method=manual
+          gateway=192.168.122.1
+          addresses=192.168.122.10/24
+          dns=192.168.122.1
+
+          [ipv6]
+          method=ignore

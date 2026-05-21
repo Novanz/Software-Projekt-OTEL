@@ -1,0 +1,105 @@
+{
+  "ignition": {
+    "version": "3.5.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "wheel"
+        ],
+        "name": "nan",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINPgoBJwyBSysQ9HG88Uu9IBOOEhfPKgQLldKzaO2kUf local_vm"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "overwrite": true,
+        "path": "/etc/sudoers.d/90-nan",
+        "contents": {
+          "compression": "",
+          "source": "data:,nan%20ALL%3D(ALL)%20NOPASSWD%3A%20ALL%0A"
+        },
+        "mode": 288
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/NetworkManager/system-connections/static.nmconnection",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/2zOQcrCMBAF4H1P8V/gj00oRRc5SXExJM82YCYhGZXe3p2MxVm+9zG8JRRmBEmFr8Pf51L0XUhSUJnsFR6yoTFEWxa0GwX8M2V4cLV9HBRYUn1O+nuGbCX6TPygu8pXErxo9/bijJ3PxjpnrOopxobe0b/FeHKTUpEP/XHL/GNLWrk0DO8AAAD//7RensoPAQAA"
+        },
+        "mode": 384
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/systemd/system/podman-prepull.service",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/3SOsU7DQBBE+/sK/4BjKrorQFBEokAYRBG5OM7jZMV519rdC+TvkY1Spt2dmfcOH0w+hCdYVlqchOOrol1qKU0W9kQMbWhOR1jDwIixmUQbg54pw8LD5NDI8B/R71a4EGPnSY/w8JnY7cav96T+QjP5nh16TqVHjnchHPr/6SG8XxZEYdhJPDz/Im+d2FXTrkhOpfsi7hYZ58Ttolild3YKb7AtKNxOiUpVXE8r4n5l7Nk8lTJsihgfL3GuxamtBr0a/gUAAP//uHeCahsBAAA="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/usr/local/bin/podman-prepull.sh",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/5RU72/bNhT8/v6KN5ZtbAyy7O4HCqfaFjR2YSBLhiT9lGUGI9HyQyhSI6lkQeD/fRAl2ZaXFc0nWfTd6Y73yDffxZWz8R3pWOoHvBNuDU56jGRlsKRSrgQpgKvrk+svV8v54myWxLbScWmyQuiotLKslBo5L3zlAmy2PF1cJvGDsLGiuwNgiwg6fIuOa7qEs4vPy+uTzwnrcxgAFSKXLhkAIiLL16kdkYkLtVLmsX1MH34YTSajSbQKlADMTHovAzRdW1OI7K79MZ2Mfhp9+A/KKCUK0T6m49H7H0djBkMAb7xQCX9+0xi5+e12A5SMIa2sldovw3LCGICnQjovinIwxOegnwkvMYrImejDz+NJ4mRqdOZgA/Boyctls3dbvDKpUBh2JGF8wvYWC+lc+BB/zyCsF/cZWYxKZLvdbBilJe1XePTW/amPkPEgyPCXDlhX0CBT4bvltmKGHz/OLuYw/3RxhaTJk1CYGu0FaWmxtDJqyqw1p9howzUV9ctguwVD+L0xPEXeWodadgOgTH4QeJdt0g9w89bdYpdiT5wh61QbwnaQlclzaTHyyHg7Uz3wBsDopbTW2AMT8h/yy9RkMuG/7i3XZ0BmXcv8uVf7NKr0vTaPGsPrpm1mv1tk85PF2eyUIfujUp0ePq5JSSytSaVzpPMp8v0vdc3nHf3bCHUGZHwbJeT1VpTYhcbZ5SUArfAGoxX2BgJv8d07zK0sMfobj/46vTif8aM+5hj9WuoXQtZghmzRDkzwtB0WFMpKkT1haopSSS8zJI2i/v+BTOXQVnovcRgtJIe1aMc9RndPZUk6PxDfSz6GFfVPFrLLL+fni/N6CK68sD7wXzY5GMc8HPatzSGDztDXmS2vuSGGDGBlLFJRE5Dx593NwY4xM8EwJXwwIPweJ8NhcxT79wmnIn9xnHaBbji1jm/xU8NWT1g7qr02AttN3Qf3If0D1Ny/AYKvNTEnTW4ts2/xsOqwDSYzWh5W9/WZ2s2Sq9L6UNSX/1PXxf9V+SoxBv8GAAD//5+AhAEjBwAA"
+        },
+        "mode": 493
+      },
+      {
+        "path": "/usr/local/bin/show-prepull-status.sh",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/3yQQUvzMBzG7/kUz9t3DD3MuquSg4wOB9IeWk8yQtqlJFCTkvwzD9u+u7STWRXNKSG/3z/Pk///0hh8WhubKrtHLYNmrKwequdSrDdPGU99tGnvdq/SLnqv+th1N4EkxTBi2d+UYswEYSwpLxsyeyVC0FfXODAAeMHCIpkdyvJRrIo8z1bVpsjvFqcEW8znwz1hiS07MRa0i91OBO3epn6LZDaJO4jHI7yi6C2WI/VxuB2m9N5YEuf8lzGq0e6yQcI5x3pVlKido0Be9jgL4JwnI9hI+vbuV//39QkOcUyLn98zNJ+0vQdpZUdtmp61hr0HAAD//6MHFpi9AQAA"
+        },
+        "mode": 493
+      },
+      {
+        "path": "/etc/profile.d/10-podman-prepull-status.sh",
+        "contents": {
+          "compression": "",
+          "source": "data:,%23!%2Fusr%2Fbin%2Fenv%20bash%0A%2Fusr%2Flocal%2Fbin%2Fshow-prepull-status.sh%0A"
+        },
+        "mode": 493
+      },
+      {
+        "path": "/etc/containers/systemd/chromadb.container",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/5SQTWsyQRCE7/0rFt6zO/MSAmZhDlEvXoJoPiDLHtrZjg7Ox6anR/HfhxjdWw65FV1dUPX8qxSJVTZFQReJs8rnLBR6ZfecAvbbevSgfYlOOlhQtuwGcSma+eVrMauOZCVxlSUxweOHEJtIckp8mKToXaRakHck1ZD6gHEyMA3F+zoTH50leMMo+W+RNX0Wx5TNLz6081v1Dkb5hIHMbRwsA+7I9MkeiGuXxtVX0fyv7+sprMrWu7xfJRbzoPW0mWqt4TX5EsioI7LybjtmG9WjYPMO0G5+qnSwpizIYtCf8Jzh2QVKRTbftw1Zc6c1QLuMWdD77gKD+tnZhOLFTUomvrKArwAAAP//VBRQcLEBAAA="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/containers/systemd/mlflow.container",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/5SRvY7bMAzHdz6FXkC2g0OGBtDQr+GAtjhc+gE09SDbdEIcLfkoKum9feFELtChw0EDxT/1g0j+D98CaQsfMPVCs1IM7vOnkePFJJQzCrwdFcUF1EuUJxsDU8BKvRxRzRyHyQc7C86ZuVoI6hF++KDpdcgjPmcSTO4/dTi8j0E9BZQW/l6/+AndxEu7cD/5I7rjqZeKYn0TS9id76rNptrYMTPD98h5QlefvdRM3fpmjT/hIXdM6fQQRd2bptnutk3TAHz8jX35rOzG/AJjrD3FpKaprqdIcxQ1C1byzvdPGAabNAraLGTSM5Pirq7rf3uthq4wA44+s1ovSqPv1UqMakbiK1WgtZgADvvbrlp4xKRe1Hm++Je0pnvs3Ra+0oQx635V7pbRDvchqWdur9bh8O7FTZmVbE4oxTn4EwAA//9+oDqUKgIAAA=="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/containers/systemd/ollama.container",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/5RQy2rrQAzd6ysMdx0/7s1dNDAL9wENOE1I+oAaUyaOkg4ZS65GTsjflzpOd10ULSSdBxxO+UROK7jFUItr1TGZufe2sVFRzKKAckCBfKsohlCPLPsRk3eEsVrZoUYtbxpLo1aw7byPvxyuRnixpOF3liV+dE4wmB94KG+Y1DpCqeD7fLANGu4jw7SxOzQbrvcosePkDA9rksZ/x3EKz+y7Bk1ysJJ4t76wiTBrEg/fKyy6tXfhfcGi5irNskmWjf+N4Y4OTpgaJDXzoshn+dv9fPVo0rifQQXl6hy6giUGtaIrrM1/+BPl/mhPIZIzGjFFW+t8J3gRGtsrAMopBbXeV32XuLk+mabz6kZdQBmqhM8AAAD//7x6wDq/AQAA"
+        },
+        "mode": 420
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "enabled": true,
+        "name": "podman-prepull.service"
+      }
+    ]
+  }
+}

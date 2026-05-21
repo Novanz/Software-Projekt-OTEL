@@ -1,0 +1,25 @@
+[Unit]
+Description=MLflow server
+After=network-online.target podman-prepull.service
+Wants=network-online.target podman-prepull.service
+Requires=podman-prepull.service
+
+[Container]
+ContainerName=mlflow
+Image=ghcr.io/mlflow/mlflow:v3.11.1-full
+Volume=/var/lib/mlflow:/mlflow:Z
+PublishPort=9005:5000
+
+Exec=mlflow server \
+  --host 0.0.0.0 \
+  --port 5000 \
+  --backend-store-uri sqlite:////mlflow/mlflow.db \
+  --default-artifact-root file:///mlflow/artifacts
+
+[Service]
+Restart=always
+RestartSec=5
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target

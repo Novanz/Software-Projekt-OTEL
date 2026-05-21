@@ -1,0 +1,19 @@
+# /etc/containers/systemd/chromadb.container
+[Unit]
+Description=ChromaDB vector store
+After=network-online.target podman-prepull.service
+Wants=network-online.target podman-prepull.service
+Requires=podman-prepull.service
+
+[Container]
+ContainerName=chromadb
+Image=docker.io/chromadb/chroma:1.5.8
+PublishPort=9008:8000
+Volume=/var/lib/chromadb:/data:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target
