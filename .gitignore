@@ -1,4 +1,5 @@
 mlflow-venv/
-.old
-.newold
-.latest
+*.old
+*.newold
+*.latest
+*.pub
