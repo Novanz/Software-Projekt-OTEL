@@ -7,6 +7,14 @@ if [[ $# -ne 1 || "$1" == "-h" || "$1" == "--help" ]]; then
     exit 1
 fi
 
+# OTEL vars
+export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+export MLFLOW_EXPERIMENT=weather_rag_v1
+export ENABLE_OTEL=true
+# export OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://127.0.0.1:5000/v1/traces
+# export OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=http/protobuf
+# export OTEL_CAPTURE_CONTENT=false
+
 MLFLOW_TRACKING_URI="${MLFLOW_TRACKING_URI:-http://127.0.0.1:5000}"
 CHROMA_HOST="${CHROMA_HOST:-127.0.0.1}"
 CHROMA_PORT="${CHROMA_PORT:-7000}"
