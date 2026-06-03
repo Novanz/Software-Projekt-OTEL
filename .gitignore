@@ -1,4 +1,6 @@
 mlflow-venv/
+docker/mlflow
+docker/chroma
 *.old
 *.newold
 *.latest

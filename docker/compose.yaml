@@ -1,0 +1,66 @@
+#
+# 1. Chroma uses non standard port(fix if needed)
+# 2. Made for OSes with SELinux, to use with Debian like trimm ':Z' in volumes definitions
+# 3. Set path for your chroma seed-script
+services:
+  mlflow:
+    restart: always
+    image: ghcr.io/mlflow/mlflow:v3.11.1-full
+    container_name: mlflow_server
+    ports:
+      - "127.0.0.1:5000:5000"
+    working_dir: /mlflow
+    command:
+      [
+        "mlflow",
+        "server",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "5000",
+        "--backend-store-uri",
+        "sqlite:////mlflow/mlflow.db",
+        "--default-artifact-root",
+        "/mlflow/artifacts",
+      ]
+    volumes:
+      - ./mlflow:/mlflow:Z
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'python -c "import urllib.request; urllib.request.urlopen(''http://127.0.0.1:5000'').read()" || exit 1',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  chromadb:
+    restart: always
+    image: chromadb/chroma:1.5.8
+    container_name: chromadb
+    ports:
+      - "127.0.0.1:7000:8000"
+    environment:
+      IS_PERSISTENT: "TRUE"
+      PERSIST_DIRECTORY: /chroma/chroma
+      ANONYMIZED_TELEMETRY: "FALSE"
+    volumes:
+      - ./chroma:/chroma/chroma:Z
+
+  seed_chroma:
+    image: python:3.13-slim
+    container_name: seed_chroma
+    restart: "no"
+    working_dir: /app
+    depends_on:
+      - chromadb
+    environment:
+      CHROMA_HOST: chromadb
+      CHROMA_PORT: "8000"
+    volumes:
+      - ../otel/seed_weather.py:/app/seed.py:Z
+    command: >
+      sh -c "pip install --no-cache-dir chromadb requests &&
+             python seed.py"

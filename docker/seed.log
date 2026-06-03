@@ -1,0 +1,200 @@
+seed_chroma  |   Downloading filelock-3.29.0-py3-none-any.whl.metadata (2.0 kB)
+seed_chroma  | Collecting fsspec>=2023.5.0 (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.13.2->chromadb)
+seed_chroma  |   Downloading fsspec-2026.4.0-py3-none-any.whl.metadata (10 kB)
+seed_chroma  | Collecting hf-xet<2.0.0,>=1.4.3 (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.13.2->chromadb)
+seed_chroma  |   Downloading hf_xet-1.5.0-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+seed_chroma  | Collecting typer>=0.9.0 (from chromadb)
+seed_chroma  |   Downloading typer-0.25.1-py3-none-any.whl.metadata (15 kB)
+seed_chroma  | Collecting shellingham>=1.3.0 (from typer>=0.9.0->chromadb)
+seed_chroma  |   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+seed_chroma  | Collecting annotated-doc>=0.0.2 (from typer>=0.9.0->chromadb)
+seed_chroma  |   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+seed_chroma  | Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.18.3->chromadb)
+seed_chroma  |   Downloading httptools-0.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+seed_chroma  | Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.18.3->chromadb)
+seed_chroma  |   Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+seed_chroma  | Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.18.3->chromadb)
+seed_chroma  |   Downloading watchfiles-1.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+seed_chroma  | Collecting websockets>=10.4 (from uvicorn[standard]>=0.18.3->chromadb)
+seed_chroma  |   Downloading websockets-16.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+seed_chroma  | Collecting oauthlib>=3.0.0 (from requests-oauthlib->kubernetes>=28.1.0->chromadb)
+seed_chroma  |   Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
+seed_chroma  | Downloading chromadb-1.5.9-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23.3 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.3/23.3 MB 10.9 MB/s  0:00:02
+seed_chroma  | Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+seed_chroma  | Downloading charset_normalizer-3.4.7-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (215 kB)
+seed_chroma  | Downloading idna-3.18-py3-none-any.whl (65 kB)
+seed_chroma  | Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+seed_chroma  | Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl (278 kB)
+seed_chroma  | Downloading build-1.5.0-py3-none-any.whl (26 kB)
+seed_chroma  | Downloading certifi-2026.5.20-py3-none-any.whl (134 kB)
+seed_chroma  | Downloading grpcio-1.81.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (6.8 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 11.1 MB/s  0:00:00
+seed_chroma  | Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+seed_chroma  | Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+seed_chroma  | Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+seed_chroma  | Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+seed_chroma  | Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+seed_chroma  | Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+seed_chroma  | Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+seed_chroma  | Downloading kubernetes-36.0.2-py2.py3-none-any.whl (4.6 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 10.9 MB/s  0:00:00
+seed_chroma  | Downloading aiohttp-3.14.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 11.0 MB/s  0:00:00
+seed_chroma  | Downloading multidict-6.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+seed_chroma  | Downloading yarl-1.24.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (107 kB)
+seed_chroma  | Downloading aiohappyeyeballs-2.6.2-py3-none-any.whl (15 kB)
+seed_chroma  | Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+seed_chroma  | Downloading durationpy-0.10-py3-none-any.whl (3.9 kB)
+seed_chroma  | Downloading frozenlist-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (234 kB)
+seed_chroma  | Downloading mmh3-5.2.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (103 kB)
+seed_chroma  | Downloading numpy-2.4.6-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 11.1 MB/s  0:00:01
+seed_chroma  | Downloading onnxruntime-1.26.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (18.2 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 11.1 MB/s  0:00:01
+seed_chroma  | Downloading opentelemetry_api-1.42.1-py3-none-any.whl (61 kB)
+seed_chroma  | Downloading opentelemetry_exporter_otlp_proto_grpc-1.42.1-py3-none-any.whl (19 kB)
+seed_chroma  | Downloading opentelemetry_exporter_otlp_proto_common-1.42.1-py3-none-any.whl (17 kB)
+seed_chroma  | Downloading opentelemetry_proto-1.42.1-py3-none-any.whl (71 kB)
+seed_chroma  | Downloading googleapis_common_protos-1.75.0-py3-none-any.whl (300 kB)
+seed_chroma  | Downloading opentelemetry_sdk-1.42.1-py3-none-any.whl (170 kB)
+seed_chroma  | Downloading opentelemetry_semantic_conventions-0.63b1-py3-none-any.whl (203 kB)
+seed_chroma  | Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+seed_chroma  | Downloading orjson-3.11.9-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (134 kB)
+seed_chroma  | Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+seed_chroma  | Downloading packaging-26.2-py3-none-any.whl (100 kB)
+seed_chroma  | Downloading propcache-0.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (61 kB)
+seed_chroma  | Downloading pybase64-1.4.3-cp313-cp313-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (71 kB)
+seed_chroma  | Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+seed_chroma  | Downloading pydantic_core-2.46.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 11.0 MB/s  0:00:00
+seed_chroma  | Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+seed_chroma  | Downloading pydantic_settings-2.14.1-py3-none-any.whl (60 kB)
+seed_chroma  | Downloading pypika-0.51.1-py2.py3-none-any.whl (60 kB)
+seed_chroma  | Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+seed_chroma  | Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+seed_chroma  | Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 11.5 MB/s  0:00:00
+seed_chroma  | Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+seed_chroma  | Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+seed_chroma  | Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 10.5 MB/s  0:00:00
+seed_chroma  | Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+seed_chroma  | Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+seed_chroma  | Downloading rpds_py-2026.5.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (374 kB)
+seed_chroma  | Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+seed_chroma  | Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+seed_chroma  | Downloading tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 11.1 MB/s  0:00:00
+seed_chroma  | Downloading huggingface_hub-1.17.0-py3-none-any.whl (671 kB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 671.5/671.5 kB 11.6 MB/s  0:00:00
+seed_chroma  | Downloading hf_xet-1.5.0-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 11.1 MB/s  0:00:00
+seed_chroma  | Downloading typer-0.25.1-py3-none-any.whl (58 kB)
+seed_chroma  | Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+seed_chroma  | Downloading click-8.4.1-py3-none-any.whl (116 kB)
+seed_chroma  | Downloading filelock-3.29.0-py3-none-any.whl (39 kB)
+seed_chroma  | Downloading fsspec-2026.4.0-py3-none-any.whl (203 kB)
+seed_chroma  | Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+seed_chroma  | Downloading tqdm-4.67.3-py3-none-any.whl (78 kB)
+seed_chroma  | Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+seed_chroma  | Downloading uvicorn-0.48.0-py3-none-any.whl (71 kB)
+seed_chroma  | Downloading httptools-0.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (486 kB)
+seed_chroma  | Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+seed_chroma  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 11.1 MB/s  0:00:00
+seed_chroma  | Downloading watchfiles-1.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (454 kB)
+seed_chroma  | Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+seed_chroma  | Downloading websocket_client-1.9.0-py3-none-any.whl (82 kB)
+seed_chroma  | Downloading websockets-16.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (184 kB)
+seed_chroma  | Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+seed_chroma  | Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+seed_chroma  | Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+seed_chroma  | Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+seed_chroma  | Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+seed_chroma  | Installing collected packages: pypika, flatbuffers, durationpy, websockets, websocket-client, uvloop, urllib3, typing-extensions, tqdm, tenacity, six, shellingham, rpds-py, pyyaml, python-dotenv, pyproject_hooks, pygments, pybase64, protobuf, propcache, packaging, overrides, orjson, oauthlib, numpy, multidict, mmh3, mdurl, importlib-resources, idna, httptools, hf-xet, h11, fsspec, frozenlist, filelock, click, charset_normalizer, certifi, bcrypt, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, uvicorn, typing-inspection, requests, referencing, python-dateutil, pydantic-core, opentelemetry-proto, opentelemetry-api, onnxruntime, markdown-it-py, httpcore, grpcio, googleapis-common-protos, build, anyio, aiosignal, watchfiles, rich, requests-oauthlib, pydantic, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, jsonschema-specifications, httpx, aiohttp, typer, pydantic-settings, opentelemetry-sdk, kubernetes, jsonschema, opentelemetry-exporter-otlp-proto-grpc, huggingface-hub, tokenizers, chromadb
+seed_chroma  | 
+seed_chroma  | Successfully installed aiohappyeyeballs-2.6.2 aiohttp-3.14.0 aiosignal-1.4.0 annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 attrs-26.1.0 bcrypt-5.0.0 build-1.5.0 certifi-2026.5.20 charset_normalizer-3.4.7 chromadb-1.5.9 click-8.4.1 durationpy-0.10 filelock-3.29.0 flatbuffers-25.12.19 frozenlist-1.8.0 fsspec-2026.4.0 googleapis-common-protos-1.75.0 grpcio-1.81.0 h11-0.16.0 hf-xet-1.5.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 huggingface-hub-1.17.0 idna-3.18 importlib-resources-7.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 kubernetes-36.0.2 markdown-it-py-4.2.0 mdurl-0.1.2 mmh3-5.2.1 multidict-6.7.1 numpy-2.4.6 oauthlib-3.3.1 onnxruntime-1.26.0 opentelemetry-api-1.42.1 opentelemetry-exporter-otlp-proto-common-1.42.1 opentelemetry-exporter-otlp-proto-grpc-1.42.1 opentelemetry-proto-1.42.1 opentelemetry-sdk-1.42.1 opentelemetry-semantic-conventions-0.63b1 orjson-3.11.9 overrides-7.7.0 packaging-26.2 propcache-0.5.2 protobuf-6.33.6 pybase64-1.4.3 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.1 pygments-2.20.0 pypika-0.51.1 pyproject_hooks-1.2.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 pyyaml-6.0.3 referencing-0.37.0 requests-2.34.2 requests-oauthlib-2.0.0 rich-15.0.0 rpds-py-2026.5.1 shellingham-1.5.4 six-1.17.0 tenacity-9.1.4 tokenizers-0.23.1 tqdm-4.67.3 typer-0.25.1 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.7.0 uvicorn-0.48.0 uvloop-0.22.1 watchfiles-1.2.0 websocket-client-1.9.0 websockets-16.0 yarl-1.24.2
+seed_chroma  | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+seed_chroma  | 
+seed_chroma  | [notice] A new release of pip is available: 26.0.1 -> 26.1.2
+seed_chroma  | [notice] To update, run: pip install --upgrade pip
+seed_chroma  | Traceback (most recent call last):
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connection.py", line 204, in _new_conn
+seed_chroma  |     sock = connection.create_connection(
+seed_chroma  |         (self._dns_host, self.port),
+seed_chroma  |     ...<2 lines>...
+seed_chroma  |         socket_options=self.socket_options,
+seed_chroma  |     )
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+seed_chroma  |     raise err
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+seed_chroma  |     sock.connect(sa)
+seed_chroma  |     ~~~~~~~~~~~~^^^^
+seed_chroma  | OSError: [Errno 101] Network is unreachable
+seed_chroma  | 
+seed_chroma  | The above exception was the direct cause of the following exception:
+seed_chroma  | 
+seed_chroma  | Traceback (most recent call last):
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+seed_chroma  |     response = self._make_request(
+seed_chroma  |         conn,
+seed_chroma  |     ...<10 lines>...
+seed_chroma  |         **response_kw,
+seed_chroma  |     )
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+seed_chroma  |     raise new_e
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+seed_chroma  |     self._validate_conn(conn)
+seed_chroma  |     ~~~~~~~~~~~~~~~~~~~^^^^^^
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+seed_chroma  |     conn.connect()
+seed_chroma  |     ~~~~~~~~~~~~^^
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connection.py", line 759, in connect
+seed_chroma  |     self.sock = sock = self._new_conn()
+seed_chroma  |                        ~~~~~~~~~~~~~~^^
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connection.py", line 219, in _new_conn
+seed_chroma  |     raise NewConnectionError(
+seed_chroma  |         self, f"Failed to establish a new connection: {e}"
+seed_chroma  |     ) from e
+seed_chroma  | urllib3.exceptions.NewConnectionError: HTTPSConnection(host='archive-api.open-meteo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable
+seed_chroma  | 
+seed_chroma  | The above exception was the direct cause of the following exception:
+seed_chroma  | 
+seed_chroma  | Traceback (most recent call last):
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+seed_chroma  |     resp = conn.urlopen(
+seed_chroma  |         method=request.method,
+seed_chroma  |     ...<9 lines>...
+seed_chroma  |         chunked=chunked,
+seed_chroma  |     )
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+seed_chroma  |     retries = retries.increment(
+seed_chroma  |         method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+seed_chroma  |     )
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/urllib3/util/retry.py", line 543, in increment
+seed_chroma  |     raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+seed_chroma  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+seed_chroma  | urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Max retries exceeded with url: /v1/archive?latitude=50.1109&longitude=8.6821&start_date=2025-03-01&end_date=2025-04-30&daily=weather_code%2Ctemperature_2m_max%2Ctemperature_2m_min%2Ctemperature_2m_mean%2Cprecipitation_sum%2Crain_sum%2Cwind_speed_10m_max&timezone=Europe%2FBerlin (Caused by NewConnectionError("HTTPSConnection(host='archive-api.open-meteo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+seed_chroma  | 
+seed_chroma  | During handling of the above exception, another exception occurred:
+seed_chroma  | 
+seed_chroma  | Traceback (most recent call last):
+seed_chroma  |   File "/app/seed.py", line 178, in <module>
+seed_chroma  |     main()
+seed_chroma  |     ~~~~^^
+seed_chroma  |   File "/app/seed.py", line 165, in main
+seed_chroma  |     daily = fetch_city_daily(city)
+seed_chroma  |   File "/app/seed.py", line 68, in fetch_city_daily
+seed_chroma  |     response = requests.get(OPEN_METEO_ARCHIVE_URL, params=params, timeout=60)
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/api.py", line 87, in get
+seed_chroma  |     return request("get", url, params=params, **kwargs)
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/api.py", line 71, in request
+seed_chroma  |     return session.request(method=method, url=url, **kwargs)
+seed_chroma  |            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+seed_chroma  |     resp = self.send(prep, **send_kwargs)
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+seed_chroma  |     r = adapter.send(request, **kwargs)
+seed_chroma  |   File "/usr/local/lib/python3.13/site-packages/requests/adapters.py", line 729, in send
+seed_chroma  |     raise ConnectionError(e, request=request)
+seed_chroma  | requests.exceptions.ConnectionError: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Max retries exceeded with url: /v1/archive?latitude=50.1109&longitude=8.6821&start_date=2025-03-01&end_date=2025-04-30&daily=weather_code%2Ctemperature_2m_max%2Ctemperature_2m_min%2Ctemperature_2m_mean%2Cprecipitation_sum%2Crain_sum%2Cwind_speed_10m_max&timezone=Europe%2FBerlin (Caused by NewConnectionError("HTTPSConnection(host='archive-api.open-meteo.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
