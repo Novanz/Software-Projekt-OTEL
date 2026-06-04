@@ -29,7 +29,8 @@ except Exception:
 
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000")
-MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "weather_rag_v1")
+MLFLOW_EXPERIMENT_ID = os.getenv("MLFLOW_EXPERIMENT_ID", "").strip()
+MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "weather_rag_v1").strip()
 
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:1234/v1")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "lm-studio")
@@ -77,8 +78,17 @@ def setup_tracing():
     global _OTEL_TRACER, _EXPERIMENT_ID
 
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-    exp = mlflow.set_experiment(MLFLOW_EXPERIMENT)
-    _EXPERIMENT_ID = exp.experiment_id
+
+    if MLFLOW_EXPERIMENT_ID:
+        exp = mlflow.get_experiment(MLFLOW_EXPERIMENT_ID)
+        if exp is None:
+            raise RuntimeError(
+                f"MLFLOW_EXPERIMENT_ID={MLFLOW_EXPERIMENT_ID} was not found on {MLFLOW_TRACKING_URI}"
+            )
+        _EXPERIMENT_ID = str(exp.experiment_id)
+    else:
+        exp = mlflow.set_experiment(MLFLOW_EXPERIMENT)
+        _EXPERIMENT_ID = str(exp.experiment_id)
 
     if not ENABLE_OTEL:
         print("[otel] disabled by ENABLE_OTEL=false")
