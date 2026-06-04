@@ -44,6 +44,8 @@ ENABLE_OTEL = os.getenv("ENABLE_OTEL", "true").lower() == "true"
 OTEL_SERVICE_NAME = os.getenv("OTEL_SERVICE_NAME", "weather-rag-app")
 OTEL_CAPTURE_CONTENT = os.getenv("OTEL_CAPTURE_CONTENT", "false").lower() == "true"
 
+DEFAULT_USER_ID = os.getenv("TRACE_USER_ID", "demo-user")
+DEFAULT_SESSION_ID = os.getenv("TRACE_SESSION_ID", "session-1")
 TRACE_USE_CASE = os.getenv("TRACE_USE_CASE", "rag_eval_demo")
 TRACE_APP_VERSION = os.getenv("TRACE_APP_VERSION", "v2-scorer-ready")
 TRACE_CAPTURE_QUERY = os.getenv("TRACE_CAPTURE_QUERY", "true").lower() == "true"
@@ -480,7 +482,7 @@ def ask_openai_compatible(prompt: str):
 
 
 @mlflow.trace
-def rag_mock(query: str, user_id: str = "demo-user", session_id: str = "session-1"):
+def rag_mock(query: str, user_id: str = DEFAULT_USER_ID, session_id: str = DEFAULT_SESSION_ID):
     kind = SpanKind.INTERNAL if OTEL_AVAILABLE else None
 
     root_attrs = {
@@ -596,7 +598,7 @@ if __name__ == "__main__":
             print("Please enter a question.\n")
             continue
 
-        result = rag_mock(user_query)
+        result = rag_mock(user_query, user_id=DEFAULT_USER_ID, session_id=DEFAULT_SESSION_ID)
 
         print("\nModel:")
         print(result["model"])
