@@ -1,0 +1,23 @@
+# Reproducible dependency set for the Weather-RAG observability project.
+# Python 3.13
+#
+# Install:  python -m venv .venv && source .venv/bin/activate
+#           pip install -r requirements.txt
+#
+# Versions are pinned for reproducibility. The MLflow and Chroma clients are
+# aligned with the server images in docker/compose.yaml:
+#   - ghcr.io/mlflow/mlflow:v3.11.1-full
+#   - chromadb/chroma:1.5.8
+# After verifying the environment works, lock the full transitive tree with:
+#   pip freeze > requirements.lock.txt
+
+# --- RAG application core ---
+mlflow==3.11.1
+chromadb==1.5.8
+requests==2.34.2
+
+# --- OpenTelemetry SDK instrumentation (Variant B) ---
+opentelemetry-api==1.42.1
+opentelemetry-sdk==1.42.1
+opentelemetry-exporter-otlp-proto-http==1.42.1
+opentelemetry-semantic-conventions==0.63b1
