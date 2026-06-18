@@ -4,9 +4,9 @@ Eine kleine Retrieval-Augmented-Generation-(RAG-)Anwendung („Wetter-Assistent"
 die als Referenzapplikation dient, um zwei Ansätze für Tracing/Observability von
 GenAI-Pipelines zu vergleichen:
 
-- **Variante A** — MLflow-natives Tracing (`otel/rag.py`)
-- **Variante B** — OpenTelemetry-SDK gemäß den GenAI-Semantic-Conventions
-  (`otel/rag-otel.py`)
+- **Variante A** — MLflow-natives Tracing (`otel/rag-mlflow.py`)
+- **Variante B** — reines OpenTelemetry-SDK (GenAI-Semantic-Conventions), Export
+  via OTLP an die MLflow-Ingress (`otel/rag-otel.py`)
 
 Die Anwendung beantwortet Wetterfragen ausschließlich auf Basis eines abgerufenen
 Korpus aus wöchentlichen Wetterzusammenfassungen (Open-Meteo-Archivdaten). Jeder Pipeline-Schritt wird getract. Ein Scorer bewertet die
@@ -66,8 +66,8 @@ cd ..
 
 # 3. Eine RAG-Variante ausführen (Argumente: <app.py> <experiment_id> <user_id> <session_id>)
 cd otel
-./run.sh rag-otel.py 1 alice session-42  # Variante B (OpenTelemetry)
-# ./run.sh rag.py 1 alice session-42      # Variante A (MLflow-nativ)
+./run.sh rag-otel.py   1 alice session-42  # Variante B (OpenTelemetry + OTLP)
+# ./run.sh rag-mlflow.py 1 alice session-42  # Variante A (MLflow-nativ)
 
 # 4. Die erfassten Traces bewerten
 python scorer.py

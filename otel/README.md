@@ -7,10 +7,9 @@ Instrumentierungsvarianten, den Korpus-Seeder sowie den Trace-Scorer.
 
 | Datei | Rolle |
 |-------|-------|
-| `rag.py` | **Variante A** — RAG-Pipeline ausschließlich mit MLflow-nativem Tracing. |
-| `rag-otel.py` | **Variante B** — dieselbe Pipeline mit dem OpenTelemetry-SDK (GenAI-Semantic-Conventions), parallel zu MLflow exportiert. |
-| `rag-scorer-rdy.py` | Variante B, angereichert um die Metadaten-/Laufzeitattribute, die der Scorer erwartet. |
-| `scorer.py` | Bewertet die Trace-Qualität über einen MLflow-Scorer (`trace_schema_health`) und `mlflow.genai.evaluate`. |
+| `rag-mlflow.py` | **Variante A** — RAG-Pipeline mit MLflow-nativem Tracing (`@mlflow.trace`, MLflow-SDK). |
+| `rag-otel.py` | **Variante B** — dieselbe Pipeline mit reinem OpenTelemetry-SDK: Spans via OTLP/HTTP an die MLflow-OTLP-Ingress (`/v1/traces`), plus GenAI-Metrics. Nutzt kein MLflow-SDK. |
+| `scorer.py` | Bewertet die Trace-Qualität (`trace_schema_health` via `mlflow.genai.evaluate`); ein gemeinsamer Scorer für beide Varianten. |
 | `seed_weather.py` | Baut den Korpus auf: ruft Open-Meteo-Archivdaten ab, erstellt Wochenzusammenfassungen und lädt sie in ChromaDB. |
 | `run.sh` | Wrapper, der Standard-Umgebungsvariablen setzt und eine App-Datei startet. |
 
@@ -35,7 +34,8 @@ Einstellungen vor dem Start der App:
 
 ```bash
 # Verwendung: ./run.sh <app.py> <experiment id> <user id> <session id>
-./run.sh rag-otel.py 1 alice session-42
+./run.sh rag-mlflow.py 1 alice session-42   # Variante A (MLflow-nativ)
+./run.sh rag-otel.py   1 alice session-42   # Variante B (OpenTelemetry + OTLP)
 ```
 
 Um den Scorer über die erfassten Traces auszuführen:
@@ -61,8 +61,10 @@ gängigen; eine Überschreibung erfolgt durch Export vor dem Lauf.
 | `OPENAI_API_KEY` | `lm-studio` | API-Key für den Endpoint. |
 | `OPENAI_MODEL` | *(automatisch erkannt)* | Modell-ID; falls leer, wird das erste Modell aus `/models` verwendet. |
 | `TOP_K` | `3` | Anzahl der abgerufenen Dokumente. |
-| `ENABLE_OTEL` | `true` | Schaltet den OpenTelemetry-Tracer um (Variante B). |
-| `OTEL_SERVICE_NAME` | `weather-rag-app` | OpenTelemetry-Service-/Tracer-Name. |
+| `OTEL_SERVICE_NAME` | `weather-rag-app` | OpenTelemetry-`service.name` (Variante B). |
+| `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` | `<MLFLOW_TRACKING_URI>/v1/traces` | OTLP-Ziel für Spans (Variante B). |
+| `OTEL_EXPORTER_OTLP_METRICS_ENDPOINT` | *(leer)* | OTLP-Ziel für Metrics; ohne Wert werden Metrics aufgezeichnet, aber nicht exportiert (No-op, da MLflow keine Metrics-Ingress hat). |
+| `OTEL_CAPTURE_CONTENT` | `false` | Ob Prompt-/Antworttexte in Span-Attribute aufgenommen werden. |
 | `TRACE_USER_ID` / `TRACE_SESSION_ID` | *(aus run.sh-Argumenten)* | An die Traces gehängte Nutzer-/Session-Metadaten. |
 
 Der Korpus-Seeder (`seed_weather.py`) berücksichtigt zusätzlich `START_DATE`,
