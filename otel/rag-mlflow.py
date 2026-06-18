@@ -1,3 +1,4 @@
+import json
 import os
 import time
 
@@ -7,6 +8,13 @@ import requests
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000")
 MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "weather_rag_v1")
+
+# Trace metadata consumed by scorer.py (shared with the OTel variant so the same
+# scorer evaluates both). app_version differs to tell the variants apart.
+DEFAULT_USER_ID = os.getenv("TRACE_USER_ID", "demo-user")
+DEFAULT_SESSION_ID = os.getenv("TRACE_SESSION_ID", "session-1")
+TRACE_USE_CASE = os.getenv("TRACE_USE_CASE", "rag_eval_demo")
+TRACE_APP_VERSION = os.getenv("TRACE_APP_VERSION", "v1-mlflow")
 
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:1234/v1")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "lm-studio")
@@ -112,6 +120,8 @@ def retrieve(query: str, top_k: int = TOP_K):
         span.set_attribute("retrieval.backend", "chromadb")
         span.set_attribute("retrieval.collection", CHROMA_COLLECTION)
         span.set_attribute("retrieval.top_k", top_k)
+        span.set_attribute("retrieval.hit_count", len(ranked))
+        span.set_attribute("retrieval.hit_ids", json.dumps([d["id"] for d in ranked]))
 
         return ranked
 
@@ -206,34 +216,51 @@ def ask_openai_compatible(prompt: str):
         return answer, model_name
 
 @mlflow.trace
-def rag_mock(query: str, user_id: str = "demo-user", session_id: str = "session-1"):
+def rag_mock(query: str, user_id: str = DEFAULT_USER_ID, session_id: str = DEFAULT_SESSION_ID):
+    root_span = mlflow.get_current_active_span()
+
     mlflow.update_current_trace(
         metadata={
             "mlflow.trace.user": user_id,
             "mlflow.trace.session": session_id,
+            "trace.use_case": TRACE_USE_CASE,
+            "trace.app_version": TRACE_APP_VERSION,
         }
     )
 
-    docs = retrieve(query, top_k=TOP_K)
-    prompt = build_prompt(query, docs)
-    answer, model_name = ask_openai_compatible(prompt)
+    try:
+        docs = retrieve(query, top_k=TOP_K)
+        prompt = build_prompt(query, docs)
+        answer, model_name = ask_openai_compatible(prompt)
 
-    return {
-        "query": query,
-        "model": model_name,
-        "retrieved_docs": [
-            {
-                "id": d["id"],
-                "title": d["title"],
-                "score": d["score"],
-                "city": d["city"],
-                "week_start": d["week_start"],
-                "week_end": d["week_end"],
-            }
-            for d in docs
-        ],
-        "answer": answer,
-    }
+        result = {
+            "query": query,
+            "model": model_name,
+            "retrieved_docs": [
+                {
+                    "id": d["id"],
+                    "title": d["title"],
+                    "score": d["score"],
+                    "city": d["city"],
+                    "week_start": d["week_start"],
+                    "week_end": d["week_end"],
+                }
+                for d in docs
+            ],
+            "answer": answer,
+        }
+
+        if root_span is not None:
+            root_span.set_attribute("output.model", model_name)
+            root_span.set_attribute("output.answer_length", len(answer))
+            root_span.set_attribute("output.status", "ok")
+
+        return result
+
+    except Exception:
+        if root_span is not None:
+            root_span.set_attribute("output.status", "error")
+        raise
 
 if __name__ == "__main__":
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)

@@ -7,7 +7,7 @@ from mlflow.genai.scorers import scorer
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000")
 MLFLOW_EXPERIMENT_ID = os.getenv("MLFLOW_EXPERIMENT_ID", "").strip()
-MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "weather_rag_v1").strip()
+MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "evaluation_v1").strip()
 
 
 def _safe_getattr(obj: Any, name: str, default=None):
