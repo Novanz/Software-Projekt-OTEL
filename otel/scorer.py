@@ -135,12 +135,20 @@ def trace_schema_health(
     has_inference_span = inference_span is not None or any("lmstudio_inference" in n for n in span_names)
     has_output_answer = bool(answer)
 
+    # The MLflow variant sets these via update_current_trace (-> trace_metadata).
+    # The pure-OTel variant exports over OTLP, where MLflow does not promote span
+    # attributes to trace metadata, so fall back to the root-span attributes.
+    root_attrs = _span_attrs(root_span)
+
+    def _meta(key: str):
+        return meta.get(key) or root_attrs.get(key)
+
     metadata_complete = all(
         [
-            bool(meta.get("mlflow.trace.user")),
-            bool(meta.get("mlflow.trace.session")),
-            bool(meta.get("trace.use_case")),
-            bool(meta.get("trace.app_version")),
+            bool(_meta("mlflow.trace.user")),
+            bool(_meta("mlflow.trace.session")),
+            bool(_meta("trace.use_case")),
+            bool(_meta("trace.app_version")),
         ]
     )
 
