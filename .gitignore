@@ -1,3 +1,4 @@
+mlflow/
 mlflow-venv/
 docker/mlflow
 docker/chroma
