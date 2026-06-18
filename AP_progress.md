@@ -93,8 +93,8 @@ Zweite Instrumentierungsvariante: Dieselbe RAG-Applikation wird mit reinem OpenT
 | **AP-Code** | **Bezeichnung**         | **Inhalt / Ergebnis**                                                               | **Status** | **Kommentar**                                                                                                                                                                          |
 | ----------- | ----------------------- | ----------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 5.1.1       | SDK-Konfiguration       | TracerProvider, Resource-Attribute (service.name, service.version), Sampler         | 🟡         | `TracerProvider` gesetzt. Aber: `service.name` nur als Tracer-/Scope-Name (`get_tracer(...)`), **nicht als `Resource`-Attribut**; `service.version` und ein expliziter Sampler fehlen. |
-| 5.1.2       | OTLP-Exporter           | OTLP-gRPC/HTTP-Exporter, BatchSpanProcessor, Verbindung zum Collector               | ❌         | .                      |
-| 5.1.3       | Collector-Konfiguration | OTel-Collector-Pipeline: Receiver (OTLP) → Processor → Exporter **(TO BE DECIDED)** | ❌         | Kein OTel-Collector, wir exportieren direkt an MLflow.                                                                                                                                 |
+| 5.1.2       | OTLP-Exporter           | OTLP-gRPC/HTTP-Exporter, BatchSpanProcessor, Verbindung zum Collector               | 🟡         | .                      |
+| 5.1.3       | Collector-Konfiguration | OTel-Collector-Pipeline: Receiver (OTLP) → Processor → Exporter **(TO BE DECIDED)** | 🟡         | Kein OTel-Collector, wir exportieren direkt an MLflow.                                                                                                                                 |
 
 ### AP 5.2 Konventionskonforme Spans
 
